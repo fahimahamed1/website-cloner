@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start server test
+        run: |
+          npm start &
+          sleep 5
+          curl -s http://localhost:3000 > /dev/null && echo "✅ Server running" || echo "❌ Server failed"
+          pkill -f "node src/server.js" || true

@@ -1,0 +1,23 @@
+{
+  "name": "website-cloner",
+  "version": "1.0.0",
+  "description": "A powerful Node.js tool to clone website login pages including JavaScript-rendered forms",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "node-fetch": "^2.7.0",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^22.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "keywords": ["website-cloner", "login-page", "phishing", "security-testing", "puppeteer"],
+  "author": "fahimahamed1",
+  "license": "MIT"
+}
